@@ -107,7 +107,7 @@
   }
   ));
   var o, i = ((o = window.pokiSDKVersion) || (o = e("ab") || "v2.260.1"),
-  "https://cdn.jsdelivr.net/gh/genizy/gh/patch/js/poki-sdk-" + (n ? "kids" : "core") + "-" + o + ".js"), r = document.createElement("script");
+  "https://raw.esm.sh/gh/1ts-Alec/gh@bd6bd0189e8f6579756fbc78ef89241c28e0101b/patch/js/poki-sdk-" + (n ? "kids" : "core") + "-" + o + ".js"), r = document.createElement("script");
   r.setAttribute("src", i),
   r.setAttribute("type", "text/javascript"),
   r.setAttribute("crossOrigin", "anonymous"),

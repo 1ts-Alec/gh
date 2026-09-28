@@ -2,6 +2,7 @@
 var scripts = document.getElementsByTagName("script")
   , scriptUrl = scripts[scripts.length - 1].src
   , root = scriptUrl.split("master-loader.js")[0]
+  , jsDir = scriptUrl.substring(0, scriptUrl.lastIndexOf("/") + 1)
   , loaders = {
     unity: "unity.js",
     "unity-beta": "unity-beta.js",
@@ -22,14 +23,14 @@ if (!window.config.unityWebglLoaderUrl) {
       , minor = versionSplit[1];
     switch (year) {
     case "2019":
-        window.config.unityWebglLoaderUrl = 1 === minor ? "https://cdn.jsdelivr.net/gh/genizy/gh/patch/js/UnityLoader.2019.1.js" : "https://cdn.jsdelivr.net/gh/genizy/gh/patch/js/UnityLoader.2019.2.js";
+        window.config.unityWebglLoaderUrl = 1 === minor ? jsDir + "UnityLoader.2019.1.js" : jsDir + "UnityLoader.2019.2.js";
         break;
     default:
-        window.config.unityWebglLoaderUrl = "https://cdn.jsdelivr.net/gh/genizy/gh/patch/js/UnityLoader.js"
+        window.config.unityWebglLoaderUrl = jsDir + "UnityLoader.js"
     }
 }
 var sdkScript = document.createElement("script");
-sdkScript.src = "https://cdn.jsdelivr.net/gh/genizy/gh/patch/js/poki-sdk.js",
+sdkScript.src = jsDir + "poki-sdk.js",
 sdkScript.onload = function() {
     var i = document.createElement("script");
     i.src = root + loader,
